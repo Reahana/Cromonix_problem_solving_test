@@ -10,32 +10,32 @@
    
     <script>
         function arraySum(nums, target) {  
-    var map = [];  
-    var indexnum = [];  
+            var map = [];  
+            var indexnum = [];  
 
-    for (var x = 0; x < nums.length; x++)  
-    {  
-        if (map[nums[x]] != null)  
-        {  
-            index = map[nums[x]];  
-            indexnum[0] = index+1;  
-            indexnum[1] = x+1;  
-            break;  
+            for (var x = 0; x < nums.length; x++)  
+            {  
+                if (map[nums[x]] != null)  
+                {  
+                    index = map[nums[x]];  
+                    indexnum[0] = index+1;  
+                    indexnum[1] = x+1;  
+                    break;  
+                }  
+                else  
+                {  
+                    map[target - nums[x]] = x;  
+                }  
+            }  
+            return indexnum;  
         }  
-        else  
-        {  
-            map[target - nums[x]] = x;  
-        }  
-    }  
-    return indexnum;  
-    }  
-document.write(arraySum([10,20,30,40,70],60));
-document.write('<br/>');
-document.write(arraySum([1,2,3,4],7));
-document.write('<br/>');
-document.write(arraySum([10,22,45,55,58],80));
-document.write('<br/>');
-document.write(arraySum([10,22,45,55,58],100));
+        document.write(arraySum([10,20,30,40,70],60));
+        document.write('<br/>');
+        document.write(arraySum([1,2,3,4],7));
+        document.write('<br/>');
+        document.write(arraySum([10,22,45,55,58],80));
+        document.write('<br/>');
+        document.write(arraySum([10,22,45,55,58],100));
 
     </script>
 </body>
